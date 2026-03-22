@@ -3,7 +3,7 @@ services:
     name: paperbrain
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
     envVars:
       - key: GROQ_API_KEY
         sync: false

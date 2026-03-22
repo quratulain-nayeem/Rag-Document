@@ -1,12 +1,10 @@
 langchain
 langchain-community
 langchain-groq
-langchain-huggingface
 langchain-text-splitters
 langchain-core
 pymupdf
 chromadb
-sentence-transformers
-gradio
+streamlit
 python-dotenv
 uvicorn
