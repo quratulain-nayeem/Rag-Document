@@ -11,7 +11,7 @@ MODEL_NAME = "llama-3.3-70b-versatile"  # Free model on Groq, fast and good
 # Chunking settings
 CHUNK_SIZE = 500      # Each chunk is 500 tokens
 CHUNK_OVERLAP = 100   # 100 tokens overlap between chunks so context isn't lost
-
+HF_TOKEN = os.getenv("HF_TOKEN")
 # Retrieval settings
 TOP_K = 5  # How many chunks to retrieve per question
 

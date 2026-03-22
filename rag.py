@@ -2,7 +2,7 @@ import os
 import fitz  # this is PyMuPDF - fitz is just its internal name
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
 from langchain_groq import ChatGroq
 from langchain_core.documents import Document
 from config import *
@@ -46,7 +46,10 @@ def build_vectorstore(chunks):
     Why embeddings: Computers can't search text by meaning, only by numbers.
     Embeddings turn meaning into numbers so we can do semantic search.
     """
-    embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
+    embeddings = HuggingFaceInferenceAPIEmbeddings(
+        api_key=HF_TOKEN,
+        model_name=EMBEDDING_MODEL
+    )
     vectorstore = Chroma.from_documents(
         documents=chunks,
         embedding=embeddings,
