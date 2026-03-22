@@ -764,4 +764,9 @@ with gr.Blocks(title="PaperBrain", elem_id="rag-app") as app:
     ask_btn.click(ask_ui, inputs=question_input, outputs=[answer_output, sources_output])
 
 if __name__ == "__main__":
-    app.launch(css=SAAS_CSS, js=PAPERBRAIN_MODAL_JS)
+    app.launch(
+    css=SAAS_CSS,
+    js=PAPERBRAIN_MODAL_JS,
+    server_name="0.0.0.0",
+    server_port=7860
+)
