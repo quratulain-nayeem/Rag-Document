@@ -11,7 +11,7 @@ no guessing.
 
 ## How it works
 
-1. Upload a PDF → PyMuPDF extracts text page by page
+1. Upload a PDF → Pymupdf extracts text page by page
 2. Text is split into 500-token chunks (100-token overlap)
 3. Chunks are converted to embeddings using all-MiniLM-L6-v2
 4. Embeddings stored in ChromaDB vector database
